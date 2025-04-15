@@ -1,0 +1,105 @@
+🧠 Aula 3 — Repositórios como Templates, Licenças e .gitignore
+🧩 Repositórios como Templates
+Um repositório pode ser marcado como template, permitindo que outras pessoas o usem como modelo base para novos projetos.
+
+Quando alguém usa um template, um novo repositório é criado a partir dele, com o conteúdo copiado, mas sem o histórico de commits.
+
+📜 Licença MIT
+Ao aplicar a licença MIT, você permite que qualquer pessoa use, modifique, copie e distribua seu projeto, desde que mantenha os créditos.
+
+Protege contra responsabilidade legal: quem fizer fork ou usar o código assume a responsabilidade total.
+
+É a licença mais comum para projetos open source por sua simplicidade e liberdade.
+
+📁 O que é .gitignore?
+É um arquivo de texto especial usado para dizer ao Git quais arquivos ou pastas devem ser ignorados (não versionados).
+
+Geralmente usado para evitar subir arquivos desnecessários, temporários ou sensíveis.
+
+🤔 Por que ignorar arquivos?
+Porque alguns arquivos:
+
+🔄 Mudam o tempo todo (temporários).
+
+🙈 Contêm dados sensíveis (como .env).
+
+📦 São grandes ou podem ser gerados depois (node_modules).
+
+👤 São específicos do ambiente/local do dev (ex: .vscode/).
+
+🧪 Exemplo de .gitignore:
+gitignore
+Copiar
+Editar
+node_modules/
+.vscode/
+.env
+*.log
+node_modules/ → pacotes do Node.js (reinstaláveis com npm install)
+
+.vscode/ → configurações pessoais do seu editor
+
+.env → variáveis de ambiente (senhas, chaves de API etc)
+
+*.log → arquivos de log gerados durante a execução
+
+⚙️ Como o .gitignore funciona?
+O Git ignora tudo que está listado ali como se nem existisse.
+
+Isso evita que arquivos apareçam como modificados ou sejam enviados ao GitHub.
+
+🖥 Ignorando o .vscode/
+Por que ignorar?
+
+Cada dev tem configurações diferentes.
+
+Evita conflitos e sujeira no repositório.
+
+Exemplos de arquivos dentro do .vscode/:
+
+settings.json → configurações de formatação
+
+launch.json → configurações de debug
+
+extensions.json → sugestões de extensões para o projeto
+
+🧬 CLONE → “Baixar o projeto para sua máquina”
+✅ O que acontece:
+Você baixa uma cópia local de um repositório do GitHub.
+
+Mas o dono continua sendo o mesmo, você só está acessando e trabalhando localmente.
+
+bash
+Copiar
+Editar
+git clone https://github.com/empresa/projeto.git
+🍴 FORK → “Copiar o repositório pra sua conta do GitHub”
+✅ O que acontece:
+Você cria uma cópia completa do repositório no seu GitHub.
+
+Esse repositório agora é seu, e você pode modificá-lo à vontade.
+
+Ideal para contribuir com repositórios onde você não tem permissão de escrita.
+
+📚 Outras seções importantes de um projeto no GitHub:
+📄 LICENSE
+Define os termos de uso e redistribuição do projeto.
+
+🤝 CONTRIBUTING.md
+Orientações sobre como contribuir com o projeto.
+
+👥 CODEOWNERS
+Arquivo que define quem é responsável por revisar mudanças em partes específicas do código.
+
+📘 README.md
+Página principal do repositório.
+
+Deve conter:
+
+Descrição do projeto
+
+Como instalar e usar
+
+Tecnologias usadas
+
+Contato ou links úteis
