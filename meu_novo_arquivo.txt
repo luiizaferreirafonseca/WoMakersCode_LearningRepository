@@ -1,0 +1,288 @@
+Minhas anotações sobre a Aula 2. 
+
+# 🔧 Git
+
+Git é um **Sistema de Controle de Versão Distribuído (DVCS)**.
+
+- Permite rastrear alterações no código.
+- Facilita o trabalho em equipe, mantendo o histórico de versões.
+
+## 🔁 Diferença entre Controle de Versão **Distribuído** e **Centralizado**
+
+## ✅ Controle de Versão Centralizado (CVCS)
+
+**Exemplos:** SVN, CVS
+
+- Existe **um único servidor central** que contém todos os arquivos e o histórico de versões.
+- Os desenvolvedores fazem **checkout** do código diretamente do servidor.
+- Se o servidor estiver **offline**, ninguém consegue fazer commit ou acessar o histórico completo.
+- Mais simples de gerenciar, mas com riscos de falha única (single point of failure).
+
+**Vantagens:**
+
+- Mais fácil de controlar permissões.
+- Histórico de mudanças sempre centralizado.
+
+**Desvantagens:**
+
+- Dependência total do servidor.
+- Menor flexibilidade para trabalho offline.
+
+---
+
+## 🔄 Controle de Versão Distribuído (DVCS)
+
+**Exemplos:** Git, Mercurial
+
+- Cada desenvolvedor tem uma **cópia completa do repositório**, incluindo o histórico completo.
+- É possível trabalhar **offline**: fazer commits, branches, diffs, etc.
+- Os desenvolvedores sincronizam suas mudanças com o servidor central quando desejarem (push/pull).
+
+**Vantagens:**
+
+- Trabalho offline.
+- Mais rápido para operações locais.
+- Mais seguro (cópias do histórico em vários lugares).
+
+**Desvantagens:**
+
+- Curva de aprendizado um pouco maior.
+- Pode haver conflitos na hora de sincronizar se não houver boa comunicação na equipe.
+
+---
+
+## 🆚 Resumo Comparativo
+
+| Característica | Centralizado (CVCS) | Distribuído (DVCS) |
+| --- | --- | --- |
+| Histórico completo local | ❌ | ✅ |
+| Trabalha offline | ❌ | ✅ |
+| Risco de falha única | ✅ (servidor central) | ❌ (cópias distribuídas) |
+| Velocidade (operações) | Depende da rede | Muito rápido localmente |
+| Complexidade | Menor | Maior, mas mais flexível |
+
+## 🧩 Git (Distribuído) vs SVN (Centralizado)
+
+### 📁 1. **Repositório Local Completo**
+
+- **Git:** Quando você clona um repositório, você leva **todo o histórico**, todos os commits, branches, etc., para sua máquina.
+    
+    → Você pode navegar por commits, fazer diffs, reverter alterações, criar branches e commits **sem estar conectado à internet**.
+    
+- **SVN:** Você tem os **arquivos da versão atual (working copy)** e **algumas informações de controle** (como a `.svn`).
+    
+    → Você **não leva todo o histórico** para sua máquina. Se quiser ver um commit antigo ou mudar de branch, precisa consultar o servidor.
+    
+
+---
+
+### 🔁 2. **Criação de Branches**
+
+- **Git:** Criar uma branch é uma **operação local, super leve e rápida**. É como um marcador de commit.
+- **SVN:** Criar uma branch é **uma cópia no servidor** (geralmente em `/branches`), feita via comando `svn copy`.
+    
+    → É uma operação remota e geralmente envolve política de nomes.
+    
+
+---
+
+### 📚 3. **Histórico de Commits**
+
+- **Git:** O histórico completo está no seu repositório local.
+- **SVN:** O histórico está **no servidor**. Você consegue ver logs locais, mas para operações mais complexas (como ver diffs de commits antigos), o SVN consulta o servidor.
+
+---
+
+### 📡 4. **Trabalho Offline**
+
+- **Git:** Permite commits, branches, rebases, logs, etc. totalmente **offline**.
+- **SVN:** Você pode **editar arquivos** e fazer `svn diff`, mas **commits precisam de conexão com o servidor**.
+
+---
+
+### 🧪 Conclusão
+
+Sim, o SVN **guarda informações úteis na máquina**, mas o Git é mais completo no sentido de que:
+
+- Leva o **repositório inteiro e todo o histórico** para o cliente.
+- Permite **quase todas as operações localmente**, como se você tivesse uma mini versão do repositório no seu PC.
+- No SVN, o seu repositório local é mais como uma **cópia de trabalho sincronizada** com o servidor, e não um espelho completo.
+
+# 🌐 GitHub
+
+GitHub é uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando Git.
+
+- Possui interface web para gerenciar repositórios.
+- Também é uma rede social para desenvolvedores colaborarem e compartilharem código.
+
+## 👤 Tipos de Conta no GitHub
+
+- **Personal:**
+    - Conta individual com nome, e-mail e autenticação.
+- **Organization:**
+    - Criada no GitHub como um espaço para times.
+    - Permite múltiplos membros com permissões distintas.
+- **Enterprise:**
+    - Conta corporativa com mais recursos e controle.
+
+# 💰 Tipos de Planos do GitHub
+
+### 1. 🆓 **Free**
+
+- Ideal para **usuário individual** ou projetos open-source.
+- Inclui:
+    - Repositórios públicos e privados ilimitados.
+    - Colaboradores ilimitados em repositórios públicos.
+    - 500 MB de GitHub Packages.
+    - 2.000 minutos/mês de GitHub Actions (CI/CD).
+- **Limitações**:
+    - Menos funcionalidades de gerenciamento e segurança.
+    - Sem suporte técnico dedicado.
+
+---
+
+### 2. 👨‍💻 **Pro**
+
+- Ideal para **desenvolvedores individuais** que querem mais funcionalidades.
+- Inclui tudo do plano Free, **mais**:
+    - Insights avançados de contribuição.
+    - Ferramentas de revisão de código aprimoradas.
+    - 2 GB de GitHub Packages.
+    - 3.000 minutos/mês de GitHub Actions.
+- 💵 Preço: pago mensalmente por usuário.
+
+---
+
+### 3. 👥 **Team**
+
+- Ideal para **equipes de desenvolvimento**.
+- Inclui tudo do Pro, **mais**:
+    - **Permissões por equipe** (controle de acesso granular).
+    - Revisões obrigatórias de código.
+    - Ferramentas de planejamento (GitHub Projects).
+    - 3 GB de GitHub Packages.
+    - 3.000 minutos/mês de GitHub Actions.
+- 💵 Preço: pago por usuário/mês.
+
+---
+
+### 4. ☁️ **Enterprise Cloud**
+
+- Ideal para **grandes empresas** que usam GitHub na nuvem.
+- Inclui tudo do Team, **mais**:
+    - **SSO/SAML**, autenticação via Azure AD, etc.
+    - Auditoria e conformidade avançadas.
+    - Actions e Packages com limites maiores.
+    - Suporte Premium (SLA).
+    - Integração com ferramentas corporativas.
+- Escalável e com **governança centralizada** para múltiplas organizações.
+
+---
+
+### 5. 🖥️ **Enterprise Server**
+
+- Ideal para empresas que **precisam hospedar o GitHub internamente** (on-premises).
+- Versão do GitHub que roda em servidores próprios da empresa.
+- Mantém a **mesma experiência do GitHub Cloud**, mas com:
+    - Total controle da infraestrutura e dados.
+    - Atende a **requisitos de segurança e regulamentações** específicas.
+    - Integração com LDAP, SSO, proxy e ferramentas internas.
+- 💡 Pode ser usado junto com o Enterprise Cloud via GitHub Connect.
+    
+    ## 🏢 O que é **"on-premises"**?
+    
+    **On-premises** (ou **"on-prem"**) significa que o **sistema roda dentro da infraestrutura da própria empresa**, ou seja:
+    
+    - Nos **servidores físicos** da empresa.
+    - Ou em uma **nuvem privada** controlada pela empresa.
+    - A empresa é **responsável pela instalação, manutenção e segurança** do sistema.
+    
+    ### ⚙️ Exemplos:
+    
+    - Um banco que tem seu próprio datacenter e **hospeda o GitHub Enterprise Server dentro dele**.
+    - Uma empresa que **não quer ou não pode** usar serviços na nuvem pública por **motivos legais, regulatórios ou de segurança.**
+
+# ☁️ Formas de Acesso e Hospedagem
+
+## 🔐 GitHub Enterprise Server
+
+- Hospedado no próprio ambiente da empresa.
+- Ideal para:
+    - Requisitos rigorosos de segurança.
+    - Conformidade com regulamentações.
+    - Controle completo da infraestrutura.
+
+## 🖥️ GitHub Desktop
+
+Aplicativo de código aberto para facilitar o uso do Git e GitHub.
+
+Permite:
+
+- Adicionar e clonar repositórios.
+- Adicionar alterações ao commit.
+- Adicionar coautores ao commit.
+- Comparar imagens modificadas.
+- Gerenciar contribuições sem usar terminal.
+
+# ☁️ GitHub Enterprise Server x GitHub Enterprise Cloud
+
+| Característica | Enterprise Server | Enterprise Cloud |
+| --- | --- | --- |
+| Hospedagem | Local (on-premise) | Nuvem GitHub |
+| Controle | Total pela empresa | GitHub gerencia |
+| Indicado para | Ambientes seguros | Escalabilidade |
+
+# 🛒 GitHub Marketplace
+
+- Loja de ferramentas e serviços integrados ao GitHub.
+- Auxilia na automação, segurança, testes, CI/CD, etc.
+- Melhora o fluxo de desenvolvimento e produtividade.
+
+---
+
+# ⚙️ Funcionalidades do GitHub
+
+### 1. Repositories (Repositórios)
+
+- Local onde o projeto de código é armazenado.
+
+### 2. Issues
+
+- Gerenciamento de tarefas, melhorias ou bugs.
+
+### 3. Discussions
+
+- Espaço para dúvidas, sugestões e discussões.
+
+### 4. Pull Requests (PRs)
+
+- Propostas de alteração no código, revisadas antes de serem integradas.
+
+### 5. Notifications
+
+- Alertas sobre atividades nos repositórios.
+
+### 6. Labels
+
+- Etiquetas para classificar issues e PRs.
+
+### 7. Actions
+
+- Automatizações como build, teste e deploy (CI/CD).
+
+### 8. Forks
+
+- Cópia de um repositório para edição independente.
+
+### 9. Projects
+
+- Quadro de gerenciamento de tarefas (parecido com Trello/Jira/Notion).
+- Usa cartões e colunas para acompanhar o progresso.
+
+# 📝 O que é Markdown?
+
+Markdown é uma linguagem de marcação leve usada para formatar texto simples.
+
+- Projetado para ser fácil de ler e escrever.
+- Permite conversão rápida para HTML e outros formatos.
+- Ideal para documentação e README de projetos.
