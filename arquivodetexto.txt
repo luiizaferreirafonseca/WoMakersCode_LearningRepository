@@ -1,0 +1,5 @@
+Este repositório foi criado como parte do curso GitHub 4 Women, focado na preparação para a certificação GitHub Foundations.
+
+Estou amando fazer o curso! 💜 Está sendo uma jornada de muito aprendizado, onde estou fortalecendo meus conhecimentos em versionamento de código, boas práticas com Git e GitHub, colaboração em projetos e tudo o que envolve o universo do desenvolvimento moderno.
+
+A cada aula, me sinto mais preparada para a prova e mais confiante em usar o GitHub de forma prática no dia a dia.]
